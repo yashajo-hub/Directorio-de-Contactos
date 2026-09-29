@@ -6,9 +6,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Examen Recuperatorio</h1>
     <!-- Escribe aquí todo tu HTML -->
+    <main class="tarjeta">
+      <h1>Directorio de Contactos</h1>
 
+      <div class="formulario">
+        <input type="text" id="nombre" placeholder="Nombre" autocomplete="off">
+        <input type="tel" id="telefono" placeholder="Teléfono" autocomplete="off">
+        <button type="button" id="btn-agregar" class="btn-agregar">Agregar</button>
+      </div>
+
+      <input type="search" id="buscador" class="buscador" placeholder="Buscar contacto por nombre..." autocomplete="off">
+
+      <ul id="lista" class="lista" aria-live="polite"></ul>
+      <p id="mensaje-vacio" class="mensaje-vacio">Todavía no agregaste contactos.</p>
+
+      <footer class="pie">
+        <span id="contador">Contactos: 0</span>
+      </footer>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
