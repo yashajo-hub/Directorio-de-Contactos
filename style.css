@@ -86,3 +86,86 @@ input:focus {
   outline: 3px solid rgba(47, 111, 94, 0.4);
   outline-offset: 2px;
 }
+
+.lista {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eef0ed;
+}
+
+.contacto:last-child {
+  border-bottom: none;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contacto-nombre {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contacto-telefono {
+  font-size: 0.9rem;
+  color: #6b716d;
+  overflow-wrap: anywhere;
+}
+
+.btn-eliminar {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a33a3a;
+  background: #ffffff;
+  border: 1px solid #e7cccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-eliminar:hover {
+  background: #fbeeee;
+}
+
+.mensaje-vacio {
+  margin: 44px 0;
+  text-align: center;
+  color: #6b716d;
+}
+
+.mensaje-vacio[hidden] {
+  display: none;
+}
+
+.pie {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e3e6e2;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6b716d;
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 28px 22px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
