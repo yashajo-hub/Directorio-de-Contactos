@@ -27,7 +27,12 @@ function agregarContacto() {
   render();
 }
 
-
+function eliminarContacto(id) {
+  contactos = contactos.filter(function (c) {
+    return c.id !== id;
+  });
+  render();
+}
 
 function crearElementoContacto(contacto) {
   const li = document.createElement("li");
@@ -61,3 +66,31 @@ function crearElementoContacto(contacto) {
   li.appendChild(btnEliminar);
   return li;
 }
+
+function render() {
+  const termino = buscador.value.trim().toLowerCase();
+
+  // El filtro solo afecta lo que se muestra, no el array original
+  const visibles = contactos.filter(function (c) {
+    return c.nombre.toLowerCase().includes(termino);
+  });
+
+  lista.innerHTML = "";
+  visibles.forEach(function (c) {
+    lista.appendChild(crearElementoContacto(c));
+  });
+
+  if (contactos.length === 0) {
+    mensajeVacio.textContent = "Todavía no agregaste contactos.";
+    mensajeVacio.hidden = false;
+  } else if (visibles.length === 0) {
+    mensajeVacio.textContent = "No hay contactos que coincidan con la búsqueda.";
+    mensajeVacio.hidden = false;
+  } else {
+    mensajeVacio.hidden = true;
+  }
+
+  // El contador siempre refleja el total real, nunca los filtrados
+  contador.textContent = "Contactos: " + contactos.length;
+}
+
