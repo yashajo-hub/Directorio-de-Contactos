@@ -1,3 +1,4 @@
+// Estructura de datos: array de objetos { id, nombre, telefono }
 let contactos = [];
 let siguienteId = 1;
 
@@ -70,7 +71,7 @@ function crearElementoContacto(contacto) {
 function render() {
   const termino = buscador.value.trim().toLowerCase();
 
-  // El filtro solo afecta lo que se muestra, no el array original
+
   const visibles = contactos.filter(function (c) {
     return c.nombre.toLowerCase().includes(termino);
   });
@@ -90,7 +91,11 @@ function render() {
     mensajeVacio.hidden = true;
   }
 
-  // El contador siempre refleja el total real, nunca los filtrados
+  
   contador.textContent = "Contactos: " + contactos.length;
 }
 
+btnAgregar.addEventListener("click", agregarContacto);
+buscador.addEventListener("input", render);
+
+render();
